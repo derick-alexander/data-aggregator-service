@@ -65,6 +65,7 @@ jobs:
       - name: Deploy to GKE (Rolling Deployment)
         run: |
           kubectl apply -n $NAMESPACE -f deployment.yaml
+          kubectl apply -n $NAMESPACE -f medi-track-ingress-resource.yaml
           kubectl rollout status -n $NAMESPACE deployment "$DEPLOYMENT_NAME"
 
       - name: Post-Deployment Integration Tests

@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: medi-track
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "ingress-webapps"
+spec:
+  ingressClassName: gce
+  rules:
+    - http:
+        paths:
+          - path: /api/appointment-management-service
+            pathType: Prefix
+            backend:
+              service:
+                name: appointment-management-service
+                port:
+                  number: 80
+          - path: /api/notification-management-service
+            pathType: Prefix
+            backend:
+              service:
+                name: notification-management-service
+                port:
+                  number: 80
+          - path: /api/patient-management-service
+            pathType: Prefix
+            backend:
+              service:
+                name: patient-management-service
+                port:
+                  number: 80
+          - path: /api/data-aggregator-service
+            pathType: Prefix
+            backend:
+              service:
+                name: data-aggregator-service
+                port:
+                  number: 80
