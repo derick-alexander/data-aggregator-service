@@ -52,3 +52,10 @@ spec:
                 path: /api/data-aggregator-service/actuator/health
               initialDelaySeconds: 40
               periodSeconds: 10
+          resources:
+            requests:
+              cpu: "300m"
+              memory: "400Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
