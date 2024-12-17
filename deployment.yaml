@@ -1,0 +1,43 @@
+#############################
+#     DEPLOYMENT YML       #
+############################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-aggregator-service
+  labels:
+    app: data-aggregator-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-aggregator-service
+  template:
+    metadata:
+      labels:
+        app: data-aggregator-service
+    spec:
+      containers:
+        - name: data-aggregator-service
+          image: gcr.io/phrasal-petal-444312-m0/data-aggregator-service:prod
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
+
+#############################
+#     SERVICE YML          #
+############################
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: data-aggregator-service
+spec:
+  selector:
+    app: data-aggregator-service
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
