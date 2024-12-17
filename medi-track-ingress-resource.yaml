@@ -16,25 +16,25 @@ spec:
               service:
                 name: appointment-management-service
                 port:
-                  number: 80
+                  number: 8080
           - path: /api/notification-management-service
             pathType: Prefix
             backend:
               service:
                 name: notification-management-service
                 port:
-                  number: 80
+                  number: 8080
           - path: /api/patient-management-service
             pathType: Prefix
             backend:
               service:
                 name: patient-management-service
                 port:
-                  number: 80
+                  number: 8080
           - path: /api/data-aggregator-service
             pathType: Prefix
             backend:
               service:
                 name: data-aggregator-service
                 port:
-                  number: 80
+                  number: 8080
