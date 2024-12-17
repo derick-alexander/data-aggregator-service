@@ -2,3 +2,8 @@ server:
   port: 8080
   servlet:
     context-path: /api/data-aggregator-service
+
+  data:
+    mongodb:
+      database: health_sync
+      uri: mongodb+srv://foodie:foodie@cluster0.t4mq9fc.mongodb.net/health_sync
