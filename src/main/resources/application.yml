@@ -2,12 +2,7 @@ server:
   port: 8080
   servlet:
     context-path: /api/data-aggregator-service
-
 spring:
-  data:
-    mongodb:
-    uri: mongodb+srv://derickawsalexander:EJUkqR9PzukziQZi@cluster0.1if2k.mongodb.net/medi_track
-
   datasource:
     url: jdbc:redshift://default-workgroup.061039772336.us-east-1.redshift-serverless.amazonaws.com:5439/medi_track
     username: admin

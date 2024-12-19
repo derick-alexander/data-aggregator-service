@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: health-tech
+  annotations:
+    kubernetes.io/ingress.class: "gce"
+    kubernetes.io/ingress.global-static-ip-name: "static-web-address"
+spec:
+  ingressClassName: gce
+  rules:
+    - http:
+        paths:
+          - path: /api/appointment-scheduling-service
+            pathType: Prefix
+            backend:
+              service:
+                name: appointment-scheduling-service
+                port:
+                  number: 8080
+          - path: /api/notification-service
+            pathType: Prefix
+            backend:
+              service:
+                name: notification-service
+                port:
+                  number: 8080
+          - path: /api/patient-record-service
+            pathType: Prefix
+            backend:
+              service:
+                name: patient-record-service
+                port:
+                  number: 8080
+          - path: /api/aggregator-service
+            pathType: Prefix
+            backend:
+              service:
+                name: aggregator-service
+                port:
+                  number: 8080
