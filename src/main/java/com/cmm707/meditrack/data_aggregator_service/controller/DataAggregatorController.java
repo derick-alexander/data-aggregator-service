@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * REST Controller for managing Data Aggregator Service.
  */
 @RestController
-@RequestMapping("/api/data-aggregator-service")
+@RequestMapping("/aggregate")
 @RequiredArgsConstructor
 public class DataAggregatorController {
 
@@ -20,7 +20,7 @@ public class DataAggregatorController {
     /**
      * Endpoint to manually trigger the data aggregation process.
      */
-    @GetMapping("/aggregate")
+    @GetMapping("/process")
     public ResponseEntity<String> runAggregation() {
         dataAggregatorService.aggregateData();
         return ResponseEntity.ok("Data aggregation process initiated.");
