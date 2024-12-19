@@ -3,7 +3,12 @@ server:
   servlet:
     context-path: /api/data-aggregator-service
 
-#  data:
-#    mongodb:
-#      database: health_sync
-#      uri: mongodb+srv://foodie:foodie@cluster0.t4mq9fc.mongodb.net/health_sync
+spring:
+  data:
+    mongodb:
+    uri: mongodb+srv://derickawsalexander:EJUkqR9PzukziQZi@cluster0.1if2k.mongodb.net/medi_track
+
+  datasource:
+    url: jdbc:redshift://default-workgroup.061039772336.us-east-1.redshift-serverless.amazonaws.com:5439/medi_track
+    username: admin
+    password: 'JBTRKcsmbl423.+'
