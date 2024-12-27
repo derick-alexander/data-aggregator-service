@@ -4,6 +4,6 @@ server:
     context-path: /api/data-aggregator-service
 spring:
   datasource:
-    url: jdbc:redshift://default-workgroup.061039772336.us-east-1.redshift-serverless.amazonaws.com:5439/medi_track
+    url:url: jdbc:redshift://medi-workgroup.640168455114.eu-north-1.redshift-serverless.amazonaws.com:5439/dev
     username: admin
-    password: 'JBTRKcsmbl423.+'
+    password: 'VCIGOzwbbk081*!'
